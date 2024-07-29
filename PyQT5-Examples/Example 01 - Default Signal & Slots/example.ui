@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>main_window</class>
+ <widget class="QMainWindow" name="main_window">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>200</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Main Window</string>
+  </property>
+  <widget class="QWidget" name="central_widget">
+   <widget class="QPushButton" name="push_button_paste">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>100</y>
+      <width>101</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Paste</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="push_button_copy">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>40</y>
+      <width>101</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Copy and Select</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="line_edit_insert">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>40</y>
+      <width>113</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="line_edit_paste">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>100</y>
+      <width>113</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="status_bar"/>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>push_button_copy</sender>
+   <signal>released()</signal>
+   <receiver>line_edit_insert</receiver>
+   <slot>copy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>221</x>
+     <y>122</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>162</x>
+     <y>121</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>push_button_copy</sender>
+   <signal>pressed()</signal>
+   <receiver>line_edit_insert</receiver>
+   <slot>selectAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>254</x>
+     <y>126</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>153</x>
+     <y>123</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>push_button_paste</sender>
+   <signal>clicked()</signal>
+   <receiver>line_edit_paste</receiver>
+   <slot>paste()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>234</x>
+     <y>192</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>151</x>
+     <y>198</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
